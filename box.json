@@ -11,7 +11,7 @@
     "installPaths":{
         "cbjavaloader":"modules/cbjavaloader"
     },
-    "location":"coldbox-modules/codechecker-core#v0.9.0",
+    "location":"coldbox-modules/codechecker-core#v1.0.0",
     "name":"CodeChecker Core",
     "projectURL":"",
     "repository":{
@@ -19,7 +19,7 @@
         "URL":"https://github.com/coldbox-modules/codechecker-core.git"
     },
     "scripts":{
-        "postVersion":"package set location=coldbox-modules/codechecker-core#v`package version`'",
+        "postVersion":"package set location='coldbox-modules/codechecker-core#v`package version`'",
         "onRelease":"publish",
         "postPublish":"!git push --follow-tags"
     },
