@@ -11,7 +11,7 @@
     "installPaths":{
         "cbjavaloader":"modules/cbjavaloader"
     },
-    "location":"coldbox-modules/codechecker-core#v1.0.0",
+    "location":"coldbox-modules/codechecker-core#v1.0.1",
     "name":"CodeChecker Core",
     "projectURL":"",
     "repository":{
@@ -26,5 +26,5 @@
     "shortDescription":"The core service for CodeChecker",
     "slug":"codechecker-core",
     "type":"modules",
-    "version":"1.0.0"
+    "version":"1.0.1"
 }
