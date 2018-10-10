@@ -1,0 +1,30 @@
+{
+    "dependencies":{
+        "cbjavaloader":"^1.7.0+42"
+    },
+    "documentation":"https://github.com/coldbox-modules/codechecker-core",
+    "homepage":"https://github.com/coldbox-modules/codechecker-core",
+    "ignore":[
+        "**/.*",
+        "tests"
+    ],
+    "installPaths":{
+        "cbjavaloader":"modules/cbjavaloader"
+    },
+    "location":"coldbox-modules/codechecker-core#v0.9.0",
+    "name":"CodeChecker Core",
+    "projectURL":"",
+    "repository":{
+        "type":"Git",
+        "URL":"https://github.com/coldbox-modules/codechecker-core.git"
+    },
+    "scripts":{
+        "postVersion":"package set location=coldbox-modules/codechecker-core#v`package version`'",
+        "onRelease":"publish",
+        "postPublish":"!git push --follow-tags"
+    },
+    "shortDescription":"The core service for CodeChecker",
+    "slug":"codechecker-core",
+    "type":"modules",
+    "version":"1.0.0"
+}
