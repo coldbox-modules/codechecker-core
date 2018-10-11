@@ -13,7 +13,7 @@
     },
     "location":"coldbox-modules/codechecker-core#v1.0.1",
     "name":"CodeChecker Core",
-    "projectURL":"",
+    "projectURL":"https://github.com/coldbox-modules/codechecker-core",
     "repository":{
         "type":"Git",
         "URL":"https://github.com/coldbox-modules/codechecker-core.git"
