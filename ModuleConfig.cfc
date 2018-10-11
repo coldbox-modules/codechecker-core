@@ -13,8 +13,7 @@ component {
 	}
 	
 	function onLoad() {
-		controller
-			.getWireBox()
+		wireBox
 			.getInstance( "loader@cbjavaloader" )
 			.appendPaths( expandPath( '/codechecker-core/models/SpreadSheet/lib' ) );
 	}

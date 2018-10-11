@@ -5,6 +5,7 @@ component accessors="true" singleton {
 
 	// properties
 	property name="categories" 	type="string";
+	property name="minSeverity"	type="numeric";
 	property name="results" 	type="array";
 	property name="rules" 		type="array";
 
@@ -30,6 +31,7 @@ component accessors="true" singleton {
 		variables.categories 		= arguments.categories;
 		variables.rules 			= arguments.rulesService.getRules();
 		variables.componentCache	= {};
+		variables.minSeverity		= 1;
 
 		return this;
 	}
@@ -72,6 +74,9 @@ component accessors="true" singleton {
 		}
 		else if ( FileExists(arguments.filepath) ) {
 			local.filePath = arguments.filepath;
+			if( !listFindNoCase( 'cfc,cfm,html,js,css,json,xml,txt,cfml,htm', local.filePath.listLast( '.' ) ) ) {
+				return variables.results;
+			}
 			readFile(filepath=local.filePath);
 			if ( variables.categories == "_ALL" OR ListFind( variables.categories, 'QueryParamScanner') ) {
 				runQueryParamScanner(filepath=local.filePath);
@@ -116,6 +121,12 @@ component accessors="true" singleton {
 		local.directory = Replace(local.standardizedfilepath, local.file, "");
 		local.fileextension = ListLast(local.file, ".");
 		for ( local.ruleitem in variables.rules ) {
+			
+			// Skip rules of low severity
+			if( local.ruleItem.severity < minSeverity ) {
+				continue;
+			}
+			
 			// backwards compat support for v1
 			if ( local.ruleitem.componentname == "CodeChecker" ) {
 				local.ruleitem.componentname = "CodeCheckerService";
