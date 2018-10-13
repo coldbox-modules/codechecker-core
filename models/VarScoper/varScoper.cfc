@@ -165,7 +165,11 @@
 					<cfif findNoCase("name",mid(fileParseText,functionTagRE.POS[1],functionTagRE.LEN[1])) GT 0>
 						<cfset functionNameRE = ReFindNoCase('name\s*=\s*["''][^"\r\n]*["'']',fileParseText,functionTagRE.POS[1],true) />
 					<cfelse>
-						<cfthrow type="functionWithoutName">
+						<!---<cfthrow type="functionWithoutName" message="No function name found in #mid(fileParseText,functionTagRE.POS[1],functionTagRE.LEN[1])#">--->
+						<cfset variables.currentLineCountPosition = functionREfind.POS[1] />
+						<cfset currentPositionInFile = functionREfind.POS[1] + functionREfind.LEN[1] />
+						<cfset functionREfind = ReFindNoCase(RegExCffunction,fileParseText,currentPositionInFile,true)>
+						<cfcontinue>
 					</cfif>
 	
 					<!--- Isolate the FunctionName for reference in the global struct --->
