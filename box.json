@@ -1,6 +1,6 @@
 {
     "dependencies":{
-        "cbjavaloader":"^1.7.0+42"
+        "cbjavaloader":"^2.0.0"
     },
     "documentation":"https://github.com/coldbox-modules/codechecker-core",
     "homepage":"https://github.com/coldbox-modules/codechecker-core",
