@@ -163,13 +163,13 @@
 					<cfset functionTagRE = ReFindNoCase("<cffunction(.*?)\>",fileParseText,currentPositionInFile,true)>
 	
 					<cfif findNoCase("name",mid(fileParseText,functionTagRE.POS[1],functionTagRE.LEN[1])) GT 0>
-						<cfset functionNameRE = ReFindNoCase('name(\s?)+\=(\s?)["''][^"\r\n]*["'']',fileParseText,functionTagRE.POS[1],true) />
+						<cfset functionNameRE = ReFindNoCase('name\s*=\s*["''][^"\r\n]*["'']',fileParseText,functionTagRE.POS[1],true) />
 					<cfelse>
 						<cfthrow type="functionWithoutName">
 					</cfif>
 	
 					<!--- Isolate the FunctionName for reference in the global struct --->
-					<cfset functionNameRE = ReFindNoCase('name(\s?)+\=(\s?)["''][^"\r\n]*["'']',fileParseText,functionTagRE.POS[1],true) />
+					<cfset functionNameRE = ReFindNoCase('name\s*=\s*["''][^"\r\n]*["'']',fileParseText,functionTagRE.POS[1],true) />
 					<cfset functionName = mid(fileParseText,functionNameRE.POS[1],functionNameRE.LEN[1]) />
 					<!--- Remove the variable name --->
 					<cfset functionName = replaceNoCase(functionName,"name","")>
