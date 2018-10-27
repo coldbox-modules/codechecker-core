@@ -292,5 +292,19 @@
         "bulkcheck": false,
         "tagname": "",
         "functionname": "checkCode"
+    },
+    {
+        "pattern": "<cfdiv\\s+",
+        "message": "cfdiv tag is not supported in Lucee",
+        "componentname": "CodeChecker",
+        "category": "LuceeMissingTags",
+        "name": "cfdiv Tag",
+        "passonmatch": false,
+        "extensions": "cfm,cfc",
+        "severity": "5",
+        "customcode": "",
+        "bulkcheck": false,
+        "tagname": "",
+        "functionname": "checkCode"
     }
 ]
