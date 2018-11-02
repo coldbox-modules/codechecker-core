@@ -11,7 +11,8 @@
         "customcode": "",
         "bulkcheck": true,
         "tagname": "",
-        "functionname": "go"
+        "functionname": "go", 
+        "excludePaths": []
     },
     {
         "pattern": "",
@@ -25,6 +26,7 @@
         "customcode": "",
         "bulkcheck": true,
         "tagname": "",
-        "functionname": "runVarscoper"
+        "functionname": "runVarscoper", 
+        "excludePaths": []
     }
 ]

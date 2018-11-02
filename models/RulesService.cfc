@@ -58,7 +58,8 @@ component accessors="true" {
 	        "customcode": "",
 	        "bulkcheck": false,
 	        "tagname": "",
-	        "functionname": "checkCode"
+	        "functionname": "checkCode", 
+	        "excludePaths": [] 
 	    };
 	    
 	    rule = defaultRule.append( rule, true );

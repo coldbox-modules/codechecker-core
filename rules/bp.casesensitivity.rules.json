@@ -11,7 +11,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "arrayFindAll\\(",
@@ -25,7 +26,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "arrayFind\\(",
@@ -39,7 +41,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "compare\\(",
@@ -53,7 +56,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "find\\(",
@@ -67,7 +71,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "listContains\\(",
@@ -81,7 +86,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "listFind\\(",
@@ -95,7 +101,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "listValueCount\\(",
@@ -109,7 +116,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "REFind\\(",
@@ -123,7 +131,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "REMatch\\(",
@@ -137,7 +146,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "replace\\(",
@@ -151,7 +161,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "REReplace\\(",
@@ -165,7 +176,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     }
     
 ]

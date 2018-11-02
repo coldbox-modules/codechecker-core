@@ -11,7 +11,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "\\b(form|application|url|session|cgi|client|request|cookie)(?=(\\[|\\.\\w))",
@@ -25,7 +26,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "is\\s+true|is\\s+not\\s+true|is\\s+false|is\\s+not\\s+false",
@@ -39,7 +41,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "is\\s+[0-9]+|is\\s+not\\s+[0-9]+|eq\\s+\\042[A-Za-z]+\\042|eq\\s+\\042[0-9]+\\042|neq\\s+\\042[A-Z][a-z]+\\042|neq\\s+\\042[0-9]+\\042",
@@ -53,7 +56,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "\\+\\s+\\042[0-9]\\042|\\-\\s+\\042[0-9]\\042|\\*\\s+\\042[0-9]\\042|\\/\\s+\\042[0-9]\\042|\\%\\s+\\042[0-9]\\042",
@@ -67,7 +71,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "\\&\\s+[0-9]",
@@ -81,7 +86,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfcatch[\\W]+[^\\<cf][\\W]+</cfcatch|<cfcatch></cfcatch>|<cfcatch>\\W+</cfcatch>",
@@ -95,7 +101,8 @@
         "customcode": "",
         "bulkcheck": true,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": ".*output=\\042\\s*true\\s*\\042|.*output=\\s*true\\s*",
@@ -109,7 +116,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "cfcomponent|cffunction",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "function init\\(|<cffunction.*name=\\042init\\042",
@@ -123,7 +131,8 @@
         "customcode": "",
         "bulkcheck": true,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "function onMissingMethod\\(|<cffunction.*name=\\042onMissingMethod\\042",
@@ -137,7 +146,8 @@
         "customcode": "",
         "bulkcheck": true,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": ".*hint=\\042\\w+.*\\042",
@@ -151,7 +161,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "cfcomponent|cffunction|cfargument",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "ArrayNew\\(1\\)",
@@ -165,7 +176,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "datasource=.*arguments",
@@ -179,6 +191,7 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     }
 ]

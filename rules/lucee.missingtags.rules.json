@@ -11,7 +11,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfcalendar\\s+",
@@ -25,7 +26,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfexchange\\s+",
@@ -39,7 +41,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cffileupload\\s+",
@@ -53,7 +56,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfformgroup\\s+",
@@ -67,7 +71,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfformitem\\s+",
@@ -81,7 +86,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfgraph\\s+",
@@ -95,7 +101,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfgrid\\s+",
@@ -109,7 +116,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfmenu\\s+",
@@ -123,7 +131,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfNTauthenticate\\s+",
@@ -137,7 +146,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfpdfform\\s+",
@@ -151,7 +161,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfpdfformparam\\s+",
@@ -165,7 +176,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfpod\\s+",
@@ -179,7 +191,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfpresent\\s+",
@@ -193,7 +206,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfprint\\s+",
@@ -207,7 +221,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfreport\\s+",
@@ -221,7 +236,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfspreadsheet\\s+",
@@ -235,7 +251,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfsprydataset\\s+",
@@ -249,7 +266,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cftextarea\\s+",
@@ -263,7 +281,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cftooltip\\s+",
@@ -277,7 +296,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cftree\\s+",
@@ -291,7 +311,8 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     },
     {
         "pattern": "<cfdiv\\s+",
@@ -305,6 +326,7 @@
         "customcode": "",
         "bulkcheck": false,
         "tagname": "",
-        "functionname": "checkCode"
+        "functionname": "checkCode", 
+        "excludePaths": []
     }
 ]

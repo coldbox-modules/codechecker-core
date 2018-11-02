@@ -55,7 +55,8 @@ component accessors="true" {
 				includeRules : {},
 				excludeRules : {},
 				ruleFiles : [],
-				customRules : []
+				customRules : [], 
+				excludePaths : []
 			};
 			
 			var configJSON = defaultConfigJSON.append( deserializeJSON( fileRead( configPath ) ) );
@@ -160,12 +161,14 @@ component accessors="true" {
 			for ( local.row = 1; local.row LTE local.qryFiles.recordcount; local.row++ ) {
 				if ( local.qryFiles.type[local.row] == "File" && listFindNoCase( 'cfc,cfm,html,js,css,json,xml,txt,cfml,htm', local.qryFiles.name[local.row].listLast( '.' ) ) ) {
 					local.filePath = "#local.qryFiles.directory[local.row]#/#local.qryFiles.name[local.row]#";
-					readFile(filepath=local.filePath);
-					if ( variables.categories == "_ALL" OR ListFind( variables.categories, 'QueryParamScanner') ) {
-						runQueryParamScanner(filepath=local.filePath);
-					}
-					if ( variables.categories == "_ALL" OR ListFind( variables.categories, 'VarScoper') ) {
-						runVarScoper(filepath=local.filePath)
+					if( !arraylen(getConfigJSON().excludePaths) || !matchSubstringFromArray(getConfigJSON().excludePaths,local.filepath) ) {
+						readFile(filepath=local.filePath);
+						if ( variables.categories == "_ALL" OR ListFind( variables.categories, 'QueryParamScanner') ) {
+							runQueryParamScanner(filepath=local.filePath);
+						}
+						if ( variables.categories == "_ALL" OR ListFind( variables.categories, 'VarScoper') ) {
+							runVarScoper(filepath=local.filePath)
+						}
 					}
 				}
 			}
@@ -175,13 +178,15 @@ component accessors="true" {
 			if( !listFindNoCase( 'cfc,cfm,html,js,css,json,xml,txt,cfml,htm', local.filePath.listLast( '.' ) ) ) {
 				return variables.results;
 			}
-			readFile(filepath=local.filePath);
-			
-			if ( variables.categories == "_ALL" OR getRules().reduce( function( result, item ){ return ( result || item.category == 'QueryParamScanner' ); }, false ) ) {
-				runQueryParamScanner(filepath=local.filePath);
-			}
-			if ( variables.categories == "_ALL" OR getRules().reduce( function( result, item ){ return ( result || item.category == 'VarScoper' ); }, false ) ) {
-				runVarScoper(filepath=local.filePath)
+			if( !arraylen(getConfigJSON().excludePaths) || !matchSubstringFromArray(getConfigJSON().excludePaths,local.filepath) ) { // kjm
+				readFile(filepath=local.filePath);
+				
+				if ( variables.categories == "_ALL" OR getRules().reduce( function( result, item ){ return ( result || item.category == 'QueryParamScanner' ); }, false ) ) {
+					runQueryParamScanner(filepath=local.filePath);
+				}
+				if ( variables.categories == "_ALL" OR getRules().reduce( function( result, item ){ return ( result || item.category == 'VarScoper' ); }, false ) ) {
+					runVarScoper(filepath=local.filePath)
+				}
 			}
 		}
 		return variables.results;
@@ -224,16 +229,19 @@ component accessors="true" {
 			// Skip rules of low severity
 			if( local.ruleItem.severity < minSeverity ) {
 				continue;
+			} 
+			if ( NOT ListFindNoCase(local.ruleitem.extensions, local.fileextension, ",") ) {
+				continue;
 			}
-			
+			if ( matchSubstringFromArray( local.ruleitem.excludePaths, local.standardizedfilepath ) ) { // kjm 
+				continue; 
+			}
+
 			// backwards compat support for v1
 			if ( local.ruleitem.componentname == "CodeChecker" ) {
 				local.ruleitem.componentname = "CodeCheckerService";
 			}	
 			if ( arguments.categories == "_ALL" OR ListFind( arguments.categories, local.ruleitem["category"] ) ) {
-				if ( NOT ListFindNoCase(local.ruleitem.extensions, local.fileextension, ",") ) {
-					continue;
-				}
 				if ( StructKeyExists(arguments,"line") AND NOT local.ruleitem.bulkcheck AND NOT ListLen(local.ruleitem.tagname,"|") ) {
 					
 					local.codeCheckerReturn = getComponent( local.ruleitem.componentname )[ local.ruleitem.functionname ]( argumentCollection={
@@ -339,6 +347,23 @@ component accessors="true" {
 	*/
 	public void function recordResult() {
 		ArrayAppend(variables.results, arguments);
+	}
+
+	/** 
+	* I check whether any value in an array of strings can be found in target string (case-insensitive)
+	* @matches I am the array of substrings to test against the target string.
+	* @target I am the string against which to find any of the possible matches.
+	*/
+	public boolean function matchSubstringFromArray( required array matches, required string target ) {  
+		if( !arraylen( arguments.matches ) || !len( arguments.target ) ) {
+			return false;
+		} 
+		for( local.i = 1; local.i <= arraylen(arguments.matches); local.i++ ) { 
+			if( isSimpleValue(arguments.matches[local.i]) && findNoCase(replace(arguments.matches[local.i],"\","/","all"), arguments.target) ) {
+				return true;
+			}
+		}
+		return false;  
 	}
 
 }
