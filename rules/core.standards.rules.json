@@ -193,5 +193,37 @@
         "tagname": "",
         "functionname": "checkCode", 
         "excludePaths": []
+    },
+    {
+        "pattern": "\\b(this)(?=(\\[|\\.\\w))",
+        "message": "Avoid using THIS scoped variables within a CFC; prefer properties/private variables with getter/setter methods.",
+        "componentname": "CodeChecker",
+        "category": "Edge - Standards",
+        "name": "Don't use THIS scoped variables in a CFC",
+        "passonmatch": false,
+        "extensions": "cfc",
+        "severity": "4",
+        "customcode": "",
+        "bulkcheck": false,
+        "tagname": "",
+        "functionname": "checkCode", 
+        "excludePaths": [
+            "Application.cfc"
+        ]
+    },
+    {
+        "pattern": "\\b(var local[= ]+)",
+        "message": "Explicitly declaring the local struct was only required in CF versions prior to 9; the local scope is implicit, and declaring it will break in recent versions of CF.",
+        "componentname": "CodeChecker",
+        "category": "Edge - Standards",
+        "name": "Don't declare var local in a CFC",
+        "passonmatch": false,
+        "extensions": "cfc",
+        "severity": "5",
+        "customcode": "",
+        "bulkcheck": false,
+        "tagname": "",
+        "functionname": "checkCode", 
+        "excludePaths": []
     }
 ]
