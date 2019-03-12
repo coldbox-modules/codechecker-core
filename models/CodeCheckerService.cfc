@@ -18,11 +18,11 @@ component accessors="true" {
 	* @wirebox Instance of WireBox
 	* @categories I am a comma separated list of categories, _ALL for all categories.
 	*/
-	CodeCheckerService function init( 
-		required any rulesService inject="RulesService@codechecker-core", 
+	CodeCheckerService function init(
+		required any rulesService inject="RulesService@codechecker-core",
 		required any utilService inject="UtilService@codechecker-core",
 		required any wireBox inject="wirebox",
-		string categories = "" 
+		string categories = ""
 	){
 		// init properties
 		variables.results 		= [];
@@ -39,16 +39,16 @@ component accessors="true" {
 
 		return this;
 	}
-	
+
 	/**
-	* Configure the checker for a given directory.  A config file will be looked for 
+	* Configure the checker for a given directory.  A config file will be looked for
 	* in this root of this folder to load additional rules.
 	*/
 	CodeCheckerService function configure( required path ){
-		// Only checking in current directory. 
+		// Only checking in current directory.
 		// Future feature: look up directory chain, possible overriding or adding on settings
-		var configPath = path & '/.codechecker.json';		
-		
+		var configPath = path & '/.codechecker.json';
+
 		// If there is a local config file
 		if( fileExists( configPath ) ) {
 			var defaultConfigJSON = {
@@ -57,34 +57,34 @@ component accessors="true" {
 				ruleFiles : [],
 				customRules : []
 			};
-			
+
 			var configJSON = defaultConfigJSON.append( deserializeJSON( fileRead( configPath ) ) );
-			
+
 			setConfigJSON( configJSON );
-			
+
 			setMinSeverity( configJSON.minSeverity ?: 1 );
-			
+
 			// Add any custom one off rules defined in JSON
 			configJSON.ruleFiles.each( function( ruleFile ) {
-				
+
 				if( !fileExists( ruleFile ) ) {
 					ruleFile = getCanonicalPath( path & '/' & ruleFile );
 				}
-				
+
 				if( !fileExists( ruleFile ) ) {
 					throw( message='Rule file not found.', detail=ruleFile, type='codecheckerMissingRuleFile' );
 				}
-				rulesService.addRuleFile( ruleFile );				
+				rulesService.addRuleFile( ruleFile );
 			} );
-			
+
 			// Add any custom rules files
 			configJSON.customRules.each( function( rule ) {
-				rulesService.addRule( rule );				
+				rulesService.addRule( rule );
 			} );
-			
+
 			// Used below as a handy index for finding all the rules in a category
 			var rulesByCategory = rulesService.getRulesByCategory();
-			
+
 			// If no whitelist, assume everything
 			if( !configJSON.includeRules.count() ) {
 				setRules( rulesService.getRules() );
@@ -94,7 +94,7 @@ component accessors="true" {
 				configJSON.includeRules.each( function( k, v ){
 					// Ignore categories that don't exist
 					if( rulesByCategory.keyExists( k ) ) {
-					
+
 						// Add all rules for this category
 						if( isSimpleValue( v ) && v == '*' ) {
 							getRules().addAll( rulesByCategory[ k ] );
@@ -104,19 +104,19 @@ component accessors="true" {
 								getRules().addAll( rulesByCategory[ k ].filter( function( rule ){ return rule.name == ruleName } ) );
 							} );
 						}
-							
+
 					}
 				} );
 			}
-			
+
 			// Process excludes
 			if( configJSON.excludeRules.count() ) {
-				
+
 				// Only add the ones we want
 				configJSON.excludeRules.each( function( k, v ){
 					// Ignore categories that don't exist
 					if( rulesByCategory.keyExists( k ) ) {
-					
+
 						// exclude all rules for this category
 						if( isSimpleValue( v ) && v == '*' ) {
 							setRules( getRules().filter( function( rule ){ return rule.category != k } ) );
@@ -124,13 +124,13 @@ component accessors="true" {
 						} else if( isArray( v ) ) {
 							setRules( getRules().filter( function( rule ){ return rule.category != k || !v.findNoCase( rule.name ) } ) );
 						}
-							
+
 					}
 				} );
 			}
 
 		}
-		
+
 		return this;
 	}
 
@@ -172,11 +172,11 @@ component accessors="true" {
 		}
 		else if ( FileExists(arguments.filepath) ) {
 			local.filePath = arguments.filepath;
-			if( !listFindNoCase( 'cfc,cfm,html,js,css,json,xml,txt,cfml,htm', local.filePath.listLast( '.' ) ) ) {
+			if( !listFindNoCase( 'cfc,cfm,html,js,css,json,xml,txt,cfml,htm,inc', local.filePath.listLast( '.' ) ) ) {
 				return variables.results;
 			}
 			readFile(filepath=local.filePath);
-			
+
 			if ( variables.categories == "_ALL" OR getRules().reduce( function( result, item ){ return ( result || item.category == 'QueryParamScanner' ); }, false ) ) {
 				runQueryParamScanner(filepath=local.filePath);
 			}
@@ -204,7 +204,7 @@ component accessors="true" {
 				runRules(filepath=arguments.filepath);
 			}
 		}
-		fileClose( local.dataFile );		
+		fileClose( local.dataFile );
 	}
 
 	/**
@@ -220,44 +220,44 @@ component accessors="true" {
 		local.directory = Replace(local.standardizedfilepath, local.file, "");
 		local.fileextension = ListLast(local.file, ".");
 		for ( local.ruleitem in variables.rules ) {
-			
+
 			// Skip rules of low severity
 			if( local.ruleItem.severity < minSeverity ) {
 				continue;
 			}
-			
+
 			// backwards compat support for v1
 			if ( local.ruleitem.componentname == "CodeChecker" ) {
 				local.ruleitem.componentname = "CodeCheckerService";
-			}	
+			}
 			if ( arguments.categories == "_ALL" OR ListFind( arguments.categories, local.ruleitem["category"] ) ) {
 				if ( NOT ListFindNoCase(local.ruleitem.extensions, local.fileextension, ",") ) {
 					continue;
 				}
 				if ( StructKeyExists(arguments,"line") AND NOT local.ruleitem.bulkcheck AND NOT ListLen(local.ruleitem.tagname,"|") ) {
-					
+
 					local.codeCheckerReturn = getComponent( local.ruleitem.componentname )[ local.ruleitem.functionname ]( argumentCollection={
 																		line = arguments.line,
 															 			passonmatch = local.ruleitem.passonmatch,
 																		pattern = local.ruleitem.pattern
 																	} );
-					
+
 					if ( NOT local.codeCheckerReturn ) {
-						recordResult(directory=local.directory, file=local.file, rule=local.ruleitem.name, message=local.ruleitem.message, linenumber=arguments.linenumber, category=local.ruleitem.category, severity=local.ruleitem.severity);
+						recordResult(directory=local.directory, file=local.file, rule=local.ruleitem.name, message=local.ruleitem.message, linenumber=arguments.linenumber, category=local.ruleitem.category, severity=local.ruleitem.severity, codeLine=arguments.line);
 					}
 				}
 				else if ( StructKeyExists(arguments,"line") AND NOT local.ruleitem.bulkcheck AND ListLen(local.ruleitem.tagname,"|") ) {
 					if ( REFindNoCase("<#Replace(local.ruleitem.tagname,'|','|<')#", arguments.line) ) {
-						
-						
+
+
 					local.codeCheckerReturn = getComponent( local.ruleitem.componentname )[ local.ruleitem.functionname ]( argumentCollection={
 																		line = arguments.line,
 																		passonmatch = local.ruleitem.passonmatch,
 																		pattern = local.ruleitem.pattern
 																	} );
-																	
+
 						if ( NOT local.codeCheckerReturn ) {
-							recordResult(directory=local.directory, file=local.file, rule=local.ruleitem.name, message=local.ruleitem.message, linenumber=arguments.linenumber, category=local.ruleitem.category, severity=local.ruleitem.severity);
+							recordResult(directory=local.directory, file=local.file, rule=local.ruleitem.name, message=local.ruleitem.message, linenumber=arguments.linenumber, category=local.ruleitem.category, severity=local.ruleitem.severity, codeLine=arguments.line);
 						}
 					}
 				}
@@ -267,7 +267,7 @@ component accessors="true" {
 					local.matches = local.objJREUtils.get( local.dataFile , local.ruleitem.pattern );
 					if ( ( local.ruleitem.passonmatch AND NOT ArrayLen(local.matches) ) OR ( ArrayLen(local.matches) AND NOT local.ruleitem.passonmatch ) ) {
 						// TODO: report actual line number
-						recordResult(directory=local.directory, file=local.file, rule=local.ruleitem.name, message=local.ruleitem.message, linenumber=-1, category=local.ruleitem.category, severity=local.ruleitem.severity);
+						recordResult(directory=local.directory, file=local.file, rule=local.ruleitem.name, message=local.ruleitem.message, linenumber=-1, category=local.ruleitem.category, severity=local.ruleitem.severity, codeLine='');
 					}
 				}
 				else {
@@ -276,7 +276,7 @@ component accessors="true" {
 			}
 		}
 	}
-	
+
 	private function getComponent( name ) {
 		if( !componentCache.keyExists( name ) ) {
 			componentCache[ name ] = wirebox.getInstance( name & '@codechecker-core' );
@@ -294,21 +294,21 @@ component accessors="true" {
 		local.directory = Replace(local.standardizedfilepath, local.file, "");
 		local.fileextension = ListLast(local.file, ".");
 		if ( ListFindNoCase("cfm,cfc",local.fileextension) ) {
-			
+
 			local.objJREUtils = wirebox.getInstance( "jre-utils@codechecker-core" );
 
-			local.objQueryParamScanner = wirebox.getInstance( 
+			local.objQueryParamScanner = wirebox.getInstance(
 				name 			= "qpscanner@codechecker-core",
-				initArguments 	= { 
-					jre  			= local.objJREUtils, 
-					StartingDir		= arguments.filepath, 
-					OutputFormat 	= "wddx", 
+				initArguments 	= {
+					jre  			= local.objJREUtils,
+					StartingDir		= arguments.filepath,
+					OutputFormat 	= "wddx",
 					RequestTimeout 	= -1
 				}
 			);
 			local.qpScannerResult = local.objQueryParamScanner.go();
 			for ( local.row = 1; local.row LTE local.qpScannerResult.data.recordcount; local.row++ ) {
-				recordResult(directory=local.directory, file=local.file, rule="Missing cfqueryparam", message="All query variables should utilize cfqueryparam. This helps prevent sql injection. It also increases query performance by caching the execution plan.", linenumber=local.qpScannerResult.data.querystartline[local.row], category="QueryParamScanner", severity="5");
+				recordResult(directory=local.directory, file=local.file, rule="Missing cfqueryparam", message="All query variables should utilize cfqueryparam. This helps prevent sql injection. It also increases query performance by caching the execution plan.", linenumber=local.qpScannerResult.data.querystartline[local.row], category="QueryParamScanner", severity="5", codeLine='');
 			}
 		}
 	}
@@ -328,7 +328,7 @@ component accessors="true" {
 			local.varScoperResult = local.objVarScoper.getResultsArray();
 			for ( local.resultitem in local.varScoperResult ) {
 				for ( local.unscopedstruct in local.resultitem.unscopedarray ) {
-					recordResult(directory=local.directory, file=local.file, rule="Unscoped CFC variable", message="All CFC variables should be scoped in order to prevent memory leaks.", linenumber=local.unscopedstruct.linenumber, category="VarScoper", severity="5");
+					recordResult(directory=local.directory, file=local.file, rule="Unscoped CFC variable", message="All CFC variables should be scoped in order to prevent memory leaks.", linenumber=local.unscopedstruct.linenumber, category="VarScoper", severity="5", codeLine='');
 				}
 			}
 		}

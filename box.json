@@ -9,7 +9,7 @@
         "tests"
     ],
     "installPaths":{
-        "cbjavaloader":"modules/cbjavaloader"
+        "cbjavaloader":"modules/cbjavaloader/"
     },
     "location":"coldbox-modules/codechecker-core#v1.0.6",
     "name":"CodeChecker Core",
