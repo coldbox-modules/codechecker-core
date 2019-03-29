@@ -308,7 +308,7 @@ component accessors="true" {
 			);
 			local.qpScannerResult = local.objQueryParamScanner.go();
 			for ( local.row = 1; local.row LTE local.qpScannerResult.data.recordcount; local.row++ ) {
-				recordResult(directory=local.directory, file=local.file, rule="Missing cfqueryparam", message="All query variables should utilize cfqueryparam. This helps prevent sql injection. It also increases query performance by caching the execution plan.", linenumber=local.qpScannerResult.data.querystartline[local.row], category="QueryParamScanner", severity="5", codeLine='');
+				recordResult(directory=local.directory, file=local.file, rule="Missing cfqueryparam", message="All query variables should utilize cfqueryparam. This helps prevent sql injection. It also increases query performance by caching the execution plan.", linenumber=local.qpScannerResult.data.querystartline[local.row], category="QueryParamScanner", severity="5", codeLine=local.qpScannerResult.data.QUERYCODE[local.row]);
 			}
 		}
 	}
@@ -328,7 +328,7 @@ component accessors="true" {
 			local.varScoperResult = local.objVarScoper.getResultsArray();
 			for ( local.resultitem in local.varScoperResult ) {
 				for ( local.unscopedstruct in local.resultitem.unscopedarray ) {
-					recordResult(directory=local.directory, file=local.file, rule="Unscoped CFC variable", message="All CFC variables should be scoped in order to prevent memory leaks.", linenumber=local.unscopedstruct.linenumber, category="VarScoper", severity="5", codeLine='');
+					recordResult(directory=local.directory, file=local.file, rule="Unscoped CFC variable", message="Unscoped variable: [#local.unscopedstruct.variableName#].  All CFC variables should be scoped in order to prevent memory leaks.", linenumber=local.unscopedstruct.linenumber, category="VarScoper", severity="5", codeLine=local.unscopedstruct.variableContext);
 				}
 			}
 		}
