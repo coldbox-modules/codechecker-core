@@ -1,0 +1,58 @@
+[
+    {
+        "pattern": "htmlEditFormat\\(",
+        "message": "Prefer encodeForHTML() over htmlEditFormat()",
+        "componentname": "CodeChecker",
+        "category": "Formatting Functions - Best Practices",
+        "name": "Don't use HtmlEditFormat",
+        "passonmatch": false,
+        "extensions": "cfm,cfc",
+        "severity": "3",
+        "customcode": "",
+        "bulkcheck": false,
+        "tagname": "",
+        "functionname": "checkCode"
+    },
+    {
+        "pattern": "jsStringFormat\\(",
+        "message": "Prefer encodeForJavaScript() over jsStringFormat()",
+        "componentname": "CodeChecker",
+        "category": "Formatting Functions - Best Practices",
+        "name": "Don't use JsStringFormat",
+        "passonmatch": false,
+        "extensions": "cfm,cfc",
+        "severity": "3",
+        "customcode": "",
+        "bulkcheck": false,
+        "tagname": "",
+        "functionname": "checkCode"
+    },
+    {
+        "pattern": "xmlFormat\\(",
+        "message": "Prefer encodeForXML() over xmlFormat()",
+        "componentname": "CodeChecker",
+        "category": "Formatting Functions - Best Practices",
+        "name": "Don't use XmlFormat",
+        "passonmatch": false,
+        "extensions": "cfm,cfc",
+        "severity": "3",
+        "customcode": "",
+        "bulkcheck": false,
+        "tagname": "",
+        "functionname": "checkCode"
+    },
+    {
+        "pattern": "urlEncodedFormat\\(",
+        "message": "Prefer encodeForURL() over urlEncodedFormat()",
+        "componentname": "CodeChecker",
+        "category": "Formatting Functions - Best Practices",
+        "name": "Don't use UrlEncodedFormat",
+        "passonmatch": false,
+        "extensions": "cfm,cfc",
+        "severity": "3",
+        "customcode": "",
+        "bulkcheck": false,
+        "tagname": "",
+        "functionname": "checkCode"
+    }
+]
