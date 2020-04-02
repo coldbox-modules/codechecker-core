@@ -194,11 +194,23 @@ component accessors="true" {
 	public void function readFile( required string filepath ) {
 		local.dataFile = fileOpen( arguments.filepath, "read" );
 		local.lineNumber = 0;
+
+		local.disabledRules = getComponent("DisabledRulesService").parseFromFile(
+			filepath: arguments.filePath
+		);
+
 		while ( !fileIsEOF( local.dataFile ) ) {
 			local.lineNumber++;
 			local.line = fileReadLine( local.dataFile );
 			// run rules on each line
-			runRules(filepath=arguments.filepath, line=local.line, linenumber=local.lineNumber, categories=variables.categories);
+			runRules(
+				filepath=arguments.filepath,
+				line=local.line,
+				linenumber=local.lineNumber,
+				categories=variables.categories,
+				disabledRules=local.disabledRules[ local.lineNumber ]
+			);
+
 			if ( fileIsEOF( local.dataFile ) ) {
 				// run rules on whole file. useful for rules where you are just testing the existence of something.
 				runRules(filepath=arguments.filepath);
@@ -214,11 +226,18 @@ component accessors="true" {
 	* @linenumber I am the line number of the code for which to review.
 	* @categories I am a comma separated list of categories, _ALL for all categories.
 	*/
-	public void function runRules( required string filepath, string line, numeric linenumber, string categories = "" ) {
+	public void function runRules(
+		required string filepath,
+		string line,
+		numeric linenumber,
+		string categories = "",
+		array disabledRules = []
+	) {
 		local.standardizedfilepath = Replace(arguments.filepath, "\", "/", "all");
 		local.file = ListLast(local.standardizedfilepath, "/");
 		local.directory = Replace(local.standardizedfilepath, local.file, "");
 		local.fileextension = ListLast(local.file, ".");
+
 		for ( local.ruleitem in variables.rules ) {
 
 			// Skip rules of low severity
@@ -230,49 +249,70 @@ component accessors="true" {
 			if ( local.ruleitem.componentname == "CodeChecker" ) {
 				local.ruleitem.componentname = "CodeCheckerService";
 			}
-			if ( arguments.categories == "_ALL" OR ListFind( arguments.categories, local.ruleitem["category"] ) ) {
-				if ( NOT ListFindNoCase(local.ruleitem.extensions, local.fileextension, ",") ) {
+
+			// Skip this rule item if we're not running all rules and the item's category wasn't selected for execution
+			if ( arguments.categories != "_ALL" AND NOT ListFind( arguments.categories, local.ruleitem["category"] ) ) {
+				continue;
+			}
+
+			// Skip this rule item if the file extension doesn't match the rule's definition
+			if ( NOT ListFindNoCase(local.ruleitem.extensions, local.fileextension, ",") ) {
+				continue;
+			}
+
+			// Determine if we were instructed to skip the current line
+			if ( structKeyExists(arguments, "line") ) {
+				local.disabledRulesService = getComponent("DisabledRulesService");
+
+				local.skip = local.disabledRulesService.shouldSkipLine(
+					line: arguments.line,
+					ruleItem: local.ruleItem,
+					disabledRules: arguments.disabledRules
+				);
+
+				if ( local.skip ) {
 					continue;
 				}
-				if ( StructKeyExists(arguments,"line") AND NOT local.ruleitem.bulkcheck AND NOT ListLen(local.ruleitem.tagname,"|") ) {
+			}
 
-					local.codeCheckerReturn = getComponent( local.ruleitem.componentname )[ local.ruleitem.functionname ]( argumentCollection={
-																		line = arguments.line,
-															 			passonmatch = local.ruleitem.passonmatch,
-																		pattern = local.ruleitem.pattern
-																	} );
+			if ( StructKeyExists(arguments,"line") AND NOT local.ruleitem.bulkcheck AND NOT ListLen(local.ruleitem.tagname,"|") ) {
+
+				local.codeCheckerReturn = getComponent( local.ruleitem.componentname )[ local.ruleitem.functionname ]( argumentCollection={
+																	line = arguments.line,
+																	passonmatch = local.ruleitem.passonmatch,
+																	pattern = local.ruleitem.pattern
+																} );
+
+				if ( NOT local.codeCheckerReturn ) {
+					recordResult(directory=local.directory, file=local.file, rule=local.ruleitem.name, message=local.ruleitem.message, linenumber=arguments.linenumber, category=local.ruleitem.category, severity=local.ruleitem.severity, codeLine=arguments.line);
+				}
+			}
+			else if ( StructKeyExists(arguments,"line") AND NOT local.ruleitem.bulkcheck AND ListLen(local.ruleitem.tagname,"|") ) {
+				if ( REFindNoCase("<#Replace(local.ruleitem.tagname,'|','|<')#", arguments.line) ) {
+
+
+				local.codeCheckerReturn = getComponent( local.ruleitem.componentname )[ local.ruleitem.functionname ]( argumentCollection={
+																	line = arguments.line,
+																	passonmatch = local.ruleitem.passonmatch,
+																	pattern = local.ruleitem.pattern
+																} );
 
 					if ( NOT local.codeCheckerReturn ) {
 						recordResult(directory=local.directory, file=local.file, rule=local.ruleitem.name, message=local.ruleitem.message, linenumber=arguments.linenumber, category=local.ruleitem.category, severity=local.ruleitem.severity, codeLine=arguments.line);
 					}
 				}
-				else if ( StructKeyExists(arguments,"line") AND NOT local.ruleitem.bulkcheck AND ListLen(local.ruleitem.tagname,"|") ) {
-					if ( REFindNoCase("<#Replace(local.ruleitem.tagname,'|','|<')#", arguments.line) ) {
-
-
-					local.codeCheckerReturn = getComponent( local.ruleitem.componentname )[ local.ruleitem.functionname ]( argumentCollection={
-																		line = arguments.line,
-																		passonmatch = local.ruleitem.passonmatch,
-																		pattern = local.ruleitem.pattern
-																	} );
-
-						if ( NOT local.codeCheckerReturn ) {
-							recordResult(directory=local.directory, file=local.file, rule=local.ruleitem.name, message=local.ruleitem.message, linenumber=arguments.linenumber, category=local.ruleitem.category, severity=local.ruleitem.severity, codeLine=arguments.line);
-						}
-					}
+			}
+			else if ( NOT StructKeyExists(arguments,"line") AND local.ruleitem.bulkcheck ) {
+				local.objJREUtils = wirebox.getInstance( "jre-utils@codechecker-core" );
+				local.dataFile = FileRead( arguments.filepath );
+				local.matches = local.objJREUtils.get( local.dataFile , local.ruleitem.pattern );
+				if ( ( local.ruleitem.passonmatch AND NOT ArrayLen(local.matches) ) OR ( ArrayLen(local.matches) AND NOT local.ruleitem.passonmatch ) ) {
+					// TODO: report actual line number
+					recordResult(directory=local.directory, file=local.file, rule=local.ruleitem.name, message=local.ruleitem.message, linenumber=-1, category=local.ruleitem.category, severity=local.ruleitem.severity, codeLine='');
 				}
-				else if ( NOT StructKeyExists(arguments,"line") AND local.ruleitem.bulkcheck ) {
-					local.objJREUtils = wirebox.getInstance( "jre-utils@codechecker-core" );
-					local.dataFile = FileRead( arguments.filepath );
-					local.matches = local.objJREUtils.get( local.dataFile , local.ruleitem.pattern );
-					if ( ( local.ruleitem.passonmatch AND NOT ArrayLen(local.matches) ) OR ( ArrayLen(local.matches) AND NOT local.ruleitem.passonmatch ) ) {
-						// TODO: report actual line number
-						recordResult(directory=local.directory, file=local.file, rule=local.ruleitem.name, message=local.ruleitem.message, linenumber=-1, category=local.ruleitem.category, severity=local.ruleitem.severity, codeLine='');
-					}
-				}
-				else {
-					continue;
-				}
+			}
+			else {
+				continue;
 			}
 		}
 	}
