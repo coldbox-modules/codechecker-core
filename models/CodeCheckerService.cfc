@@ -36,6 +36,7 @@ component accessors="true" {
 		variables.componentCache	= {};
 		variables.minSeverity		= 1;
 		variables.configJSON		= {};
+		variables.jreUtils			= variables.wirebox.getInstance( "jre-utils@codechecker-core" );
 
 		return this;
 	}
@@ -141,7 +142,7 @@ component accessors="true" {
 	* @pattern I am the pattern of code for which to check.
 	*/
 	public boolean function checkCode( required string line, required boolean passonmatch, required string pattern ) {
-		if ( ( REFindNoCase( arguments.pattern, arguments.line ) AND NOT arguments.passonmatch ) OR ( NOT REFindNoCase( arguments.pattern, arguments.line ) AND arguments.passonmatch ) ) {
+		if ( ( variables.jreUtils.matches( arguments.pattern, arguments.line ) AND NOT arguments.passonmatch ) OR ( NOT variables.jreUtils.matches( arguments.pattern, arguments.line ) AND arguments.passonmatch ) ) {
 			return false;
 		}
 		return true;
@@ -288,7 +289,7 @@ component accessors="true" {
 				}
 			}
 			else if ( StructKeyExists(arguments,"line") AND NOT local.ruleitem.bulkcheck AND ListLen(local.ruleitem.tagname,"|") ) {
-				if ( REFindNoCase("<#Replace(local.ruleitem.tagname,'|','|<')#", arguments.line) ) {
+				if ( variables.jreUtils.matches("<#Replace(local.ruleitem.tagname,'|','|<')#", arguments.line) ) {
 
 
 				local.codeCheckerReturn = getComponent( local.ruleitem.componentname )[ local.ruleitem.functionname ]( argumentCollection={
