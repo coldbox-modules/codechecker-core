@@ -139,9 +139,17 @@ component accessors="true" {
 	* @line I am the line of code for which to check.
 	* @passonmatch I determine whether to pass or fail if the pattern is matched.
 	* @pattern I am the pattern of code for which to check.
+	* @caseSensitive Whether or not the match is case sensitive
 	*/
-	public boolean function checkCode( required string line, required boolean passonmatch, required string pattern ) {
-		if ( ( REFindNoCase( arguments.pattern, arguments.line ) AND NOT arguments.passonmatch ) OR ( NOT REFindNoCase( arguments.pattern, arguments.line ) AND arguments.passonmatch ) ) {
+	public boolean function checkCode( required string line, required boolean passonmatch, required string pattern, boolean caseSensitive = false ) {
+		if ( arguments.caseSensitive ) {
+			local.matched = REFind( arguments.pattern, arguments.line );
+		}
+		else {
+			local.matched = REFindNoCase( arguments.pattern, arguments.line );
+		}
+
+		if ( ( local.matched AND NOT arguments.passonmatch ) OR ( NOT local.matched AND arguments.passonmatch ) ) {
 			return false;
 		}
 		return true;
@@ -280,7 +288,8 @@ component accessors="true" {
 				local.codeCheckerReturn = getComponent( local.ruleitem.componentname )[ local.ruleitem.functionname ]( argumentCollection={
 																	line = arguments.line,
 																	passonmatch = local.ruleitem.passonmatch,
-																	pattern = local.ruleitem.pattern
+																	pattern = local.ruleitem.pattern,
+																	caseSensitive = local.ruleitem.caseSensitive ?: false
 																} );
 
 				if ( NOT local.codeCheckerReturn ) {
@@ -294,7 +303,8 @@ component accessors="true" {
 				local.codeCheckerReturn = getComponent( local.ruleitem.componentname )[ local.ruleitem.functionname ]( argumentCollection={
 																	line = arguments.line,
 																	passonmatch = local.ruleitem.passonmatch,
-																	pattern = local.ruleitem.pattern
+																	pattern = local.ruleitem.pattern,
+																	caseSensitive = local.ruleitem.caseSensitive ?: false
 																} );
 
 					if ( NOT local.codeCheckerReturn ) {
