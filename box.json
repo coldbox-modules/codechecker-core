@@ -12,7 +12,6 @@
         "cbjavaloader":"modules/cbjavaloader/",
         "testbox":"testbox/"
     },
-    "location":"coldbox-modules/codechecker-core#v1.2.0",
     "name":"CodeChecker Core",
     "projectURL":"https://github.com/coldbox-modules/codechecker-core",
     "repository":{
@@ -20,7 +19,6 @@
         "URL":"https://github.com/coldbox-modules/codechecker-core.git"
     },
     "scripts":{
-        "postVersion":"package set location='coldbox-modules/codechecker-core#v`package version`'",
         "onRelease":"publish",
         "postPublish":"!git push --follow-tags"
     },
