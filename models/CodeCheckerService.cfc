@@ -44,13 +44,11 @@ component accessors="true" {
 	* Configure the checker for a given directory.  A config file will be looked for
 	* in this root of this folder to load additional rules.
 	*/
-	CodeCheckerService function configure( required path ){
+	CodeCheckerService function configure( required path, categories='', minSeverity='' ){
 		// Only checking in current directory.
 		// Future feature: look up directory chain, possible overriding or adding on settings
 		var configPath = path & '/.codechecker.json';
 
-		// If there is a local config file
-		if( fileExists( configPath ) ) {
 			var defaultConfigJSON = {
 				includeRules : {},
 				excludeRules : {},
@@ -58,78 +56,93 @@ component accessors="true" {
 				customRules : []
 			};
 
+		// If there is a local config file
+		if( fileExists( configPath ) ) {
 			var configJSON = defaultConfigJSON.append( deserializeJSON( fileRead( configPath ) ) );
-
-			setConfigJSON( configJSON );
-
-			setMinSeverity( configJSON.minSeverity ?: 1 );
-
-			// Add any custom one off rules defined in JSON
-			configJSON.ruleFiles.each( function( ruleFile ) {
-
-				if( !fileExists( ruleFile ) ) {
-					ruleFile = getCanonicalPath( path & '/' & ruleFile );
-				}
-
-				if( !fileExists( ruleFile ) ) {
-					throw( message='Rule file not found.', detail=ruleFile, type='codecheckerMissingRuleFile' );
-				}
-				rulesService.addRuleFile( ruleFile );
-			} );
-
-			// Add any custom rules files
-			configJSON.customRules.each( function( rule ) {
-				rulesService.addRule( rule );
-			} );
-
-			// Used below as a handy index for finding all the rules in a category
-			var rulesByCategory = rulesService.getRulesByCategory();
-
-			// If no whitelist, assume everything
-			if( !configJSON.includeRules.count() ) {
-				setRules( rulesService.getRules() );
-			} else {
-				// Only add the ones we want
-				setRules( [] );
-				configJSON.includeRules.each( function( k, v ){
-					// Ignore categories that don't exist
-					if( rulesByCategory.keyExists( k ) ) {
-
-						// Add all rules for this category
-						if( isSimpleValue( v ) && v == '*' ) {
-							getRules().addAll( rulesByCategory[ k ] );
-						// Add specific rules by name in this category
-						} else if( isArray( v ) ) {
-							v.each( function( ruleName ){
-								getRules().addAll( rulesByCategory[ k ].filter( function( rule ){ return rule.name == ruleName } ) );
-							} );
-						}
-
-					}
-				} );
-			}
-
-			// Process excludes
-			if( configJSON.excludeRules.count() ) {
-
-				// Only add the ones we want
-				configJSON.excludeRules.each( function( k, v ){
-					// Ignore categories that don't exist
-					if( rulesByCategory.keyExists( k ) ) {
-
-						// exclude all rules for this category
-						if( isSimpleValue( v ) && v == '*' ) {
-							setRules( getRules().filter( function( rule ){ return rule.category != k } ) );
-						// remove specific rules by name in this category
-						} else if( isArray( v ) ) {
-							setRules( getRules().filter( function( rule ){ return rule.category != k || !v.findNoCase( rule.name ) } ) );
-						}
-
-					}
-				} );
-			}
-
+		} else {
+			var configJSON = defaultConfigJSON;
 		}
+
+		if( len( arguments.categories ) ) {
+			configJSON.includeRules = arguments.categories.listReduce( (includeRules,c)=>{
+				includeRules[c]='*';
+				return includeRules;
+			}, {} );
+		}
+
+		setConfigJSON( configJSON );
+
+		if( len( minSeverity ) ) {
+			setMinSeverity( arguments.minSeverity );
+		} else {
+			setMinSeverity( configJSON.minSeverity ?: 1 );
+		}
+
+		// Add any custom one off rules defined in JSON
+		configJSON.ruleFiles.each( function( ruleFile ) {
+
+			if( !fileExists( ruleFile ) ) {
+				ruleFile = getCanonicalPath( path & '/' & ruleFile );
+			}
+
+			if( !fileExists( ruleFile ) ) {
+				throw( message='Rule file not found.', detail=ruleFile, type='codecheckerMissingRuleFile' );
+			}
+			rulesService.addRuleFile( ruleFile );
+		} );
+
+		// Add any custom rules files
+		configJSON.customRules.each( function( rule ) {
+			rulesService.addRule( rule );
+		} );
+
+		// Used below as a handy index for finding all the rules in a category
+		var rulesByCategory = rulesService.getRulesByCategory();
+
+		// If no whitelist, assume everything
+		if( !configJSON.includeRules.count() ) {
+			setRules( rulesService.getRules() );
+		} else {
+			// Only add the ones we want
+			setRules( [] );
+			configJSON.includeRules.each( function( k, v ){
+				// Ignore categories that don't exist
+				if( rulesByCategory.keyExists( k ) ) {
+
+					// Add all rules for this category
+					if( isSimpleValue( v ) && v == '*' ) {
+						getRules().addAll( rulesByCategory[ k ] );
+					// Add specific rules by name in this category
+					} else if( isArray( v ) ) {
+						v.each( function( ruleName ){
+							getRules().addAll( rulesByCategory[ k ].filter( function( rule ){ return rule.name == ruleName } ) );
+						} );
+					}
+
+				}
+			} );
+		}
+
+		// Process excludes
+		if( configJSON.excludeRules.count() ) {
+
+			// Only add the ones we want
+			configJSON.excludeRules.each( function( k, v ){
+				// Ignore categories that don't exist
+				if( rulesByCategory.keyExists( k ) ) {
+
+					// exclude all rules for this category
+					if( isSimpleValue( v ) && v == '*' ) {
+						setRules( getRules().filter( function( rule ){ return rule.category != k } ) );
+					// remove specific rules by name in this category
+					} else if( isArray( v ) ) {
+						setRules( getRules().filter( function( rule ){ return rule.category != k || !v.findNoCase( rule.name ) } ) );
+					}
+
+				}
+			} );
+		}
+
 
 		return this;
 	}
