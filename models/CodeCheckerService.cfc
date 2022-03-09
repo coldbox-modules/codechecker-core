@@ -47,7 +47,11 @@ component accessors="true" {
 	CodeCheckerService function configure( required path, categories='', minSeverity='' ){
 		// Only checking in current directory.
 		// Future feature: look up directory chain, possible overriding or adding on settings
-		var configPath = path & '/.codechecker.json';
+		if( path.right( 5 ) == '.json' ) {
+			var configPath = path;
+		} else {
+			var configPath = path & '/.codechecker.json';	
+		}
 
 			var defaultConfigJSON = {
 				includeRules : {},
