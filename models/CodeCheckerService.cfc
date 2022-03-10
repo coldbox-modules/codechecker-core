@@ -269,9 +269,9 @@ component accessors="true" {
 			}
 
 			// Skip this rule item if we're not running all rules and the item's category wasn't selected for execution
-			if ( arguments.categories != "_ALL" AND NOT ListFind( arguments.categories, local.ruleitem["category"] ) ) {
-				continue;
-			}
+			//if ( arguments.categories != "_ALL" AND NOT ListFind( arguments.categories, local.ruleitem["category"] ) ) {
+			//	continue;
+			//}
 
 			// Skip this rule item if the file extension doesn't match the rule's definition
 			if ( NOT ListFindNoCase(local.ruleitem.extensions, local.fileextension, ",") ) {
@@ -320,14 +320,14 @@ component accessors="true" {
 					}
 				}
 			}
-			else if ( NOT StructKeyExists(arguments,"line") AND local.ruleitem.bulkcheck ) {
+			else if ( NOT StructKeyExists(arguments,"line") AND local.ruleitem.bulkcheck AND local.ruleitem.pattern.len() ) {
 				local.objJREUtils = wirebox.getInstance( "jre-utils@codechecker-core" );
 				local.dataFile = FileRead( arguments.filepath );
 				local.matches = local.objJREUtils.get( local.dataFile , local.ruleitem.pattern );
 				if ( ( local.ruleitem.passonmatch AND NOT ArrayLen(local.matches) ) OR ( ArrayLen(local.matches) AND NOT local.ruleitem.passonmatch ) ) {
 					// TODO: report actual line number
 					recordResult(directory=local.directory, file=local.file, rule=local.ruleitem.name, message=local.ruleitem.message, linenumber=-1, category=local.ruleitem.category, severity=local.ruleitem.severity, codeLine='');
-				}
+		 			}
 			}
 			else {
 				continue;

@@ -123,7 +123,7 @@
 
 
 				<cfset process = true/>
-				<cfloop index="CurrentExclusion" list="#This.Exclusions#" delimiters=";">
+				<cfloop index="local.CurrentExclusion" list="#This.Exclusions#" delimiters=";">
 					<cfif jre.matches( CurrentTarget , CurrentExclusion )>
 						<cfset process = false/>
 					</cfif>
@@ -223,7 +223,7 @@
 
 					<cfset qryResult.ContainsClientScope[CurRow] = false/>
 					<cfif This.highlightClientScopes>
-						<cfloop index="CurrentScope" list="#This.ClientScopes#">
+						<cfloop index="local.CurrentScope" list="#This.ClientScopes#">
 							<cfif ListFind( qryResult.ScopeList[CurRow] , CurrentScope )>
 								<cfset qryResult.ContainsClientScope[CurRow] = true/>
 								<cfbreak/>
@@ -233,7 +233,7 @@
 				</cfif>
 
 				<!--- CF8 doesn't support get()[1] so need to use two lines: --->
-				<cfset QueryTagCode = jre.get( Matches[i] , REX.findQueryTag )/>
+				<cfset var QueryTagCode = jre.get( Matches[i] , REX.findQueryTag )/>
 				<cfset QueryTagCode = QueryTagCode[1] />
 
 				<cfset BeforeQueryCode = ListFirst ( replace ( ' '&FileData&' ' , Matches[i] , UniqueToken ) , UniqueToken )/>
