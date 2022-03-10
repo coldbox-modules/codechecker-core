@@ -52,6 +52,7 @@ component accessors="true" {
 		} else {
 			var configPath = path & '/.codechecker.json';	
 		}
+		var configDir = getDirectoryFromPath( configPath );
 
 			var defaultConfigJSON = {
 				includeRules : {},
@@ -86,7 +87,7 @@ component accessors="true" {
 		configJSON.ruleFiles.each( function( ruleFile ) {
 
 			if( !fileExists( ruleFile ) ) {
-				ruleFile = getCanonicalPath( path & '/' & ruleFile );
+				ruleFile = getCanonicalPath( configDir & '/' & ruleFile );
 			}
 
 			if( !fileExists( ruleFile ) ) {
