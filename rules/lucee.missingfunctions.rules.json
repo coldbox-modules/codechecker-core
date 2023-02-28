@@ -14,11 +14,11 @@
         "functionname": "checkCode"
     },
     {
-        "pattern": "decodeForHtml\\(",
-        "message": "decodeForHtml() is not supported in Lucee",
+        "pattern": "decodeForHTML\\(",
+        "message": "decodeForHTML() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "decodeForHtml()",
+        "name": "decodeForHTML()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -42,11 +42,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "deserializeXml\\(",
-        "message": "deserializeXml() is not supported in Lucee",
+        "pattern": "deserializeXML\\(",
+        "message": "deserializeXML() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "deserializeXml()",
+        "name": "deserializeXML()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -126,11 +126,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "getSafeHtml\\(",
-        "message": "getSafeHtml() is not supported in Lucee",
+        "pattern": "getSafeHTML\\(",
+        "message": "getSafeHTML() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "getSafeHtml()",
+        "name": "getSafeHTML()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -266,11 +266,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "isSafeHtml\\(",
-        "message": "isSafeHtml() is not supported in Lucee",
+        "pattern": "isSafeHTML\\(",
+        "message": "isSafeHTML() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "isSafeHtml()",
+        "name": "isSafeHTML()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -462,11 +462,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "serializeXml\\(",
-        "message": "serializeXml() is not supported in Lucee",
+        "pattern": "serializeXML\\(",
+        "message": "serializeXML() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "serializeXml()",
+        "name": "serializeXML()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
