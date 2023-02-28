@@ -14,11 +14,11 @@
         "functionname": "checkCode"
     },
     {
-        "pattern": "decodeforhtml\\(",
-        "message": "decodeforhtml() is not supported in Lucee",
+        "pattern": "decodeForHtml\\(",
+        "message": "decodeForHtml() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "decodeforhtml()",
+        "name": "decodeForHtml()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -42,11 +42,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "deserializexml\\(",
-        "message": "deserializexml() is not supported in Lucee",
+        "pattern": "deserializeXml\\(",
+        "message": "deserializeXml() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "deserializexml()",
+        "name": "deserializeXml()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -56,11 +56,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "dotnettocftype\\(",
-        "message": "dotnettocftype() is not supported in Lucee",
+        "pattern": "dotnetToCFType\\(",
+        "message": "dotnetToCFType() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "dotnettocftype()",
+        "name": "dotnetToCFType()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -70,11 +70,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "generatepbkdfkey\\(",
-        "message": "generatepbkdfkey() is not supported in Lucee",
+        "pattern": "generatePBKDFKey\\(",
+        "message": "generatePBKDFKey() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "generatepbkdfkey()",
+        "name": "generatePBKDFKey()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -84,11 +84,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "getexception\\(",
-        "message": "getexception() is not supported in Lucee",
+        "pattern": "getException\\(",
+        "message": "getException() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "getexception()",
+        "name": "getException()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -98,11 +98,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "getgatewayhelper\\(",
-        "message": "getgatewayhelper() is not supported in Lucee",
+        "pattern": "getGatewayHelper\\(",
+        "message": "getGatewayHelper() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "getgatewayhelper()",
+        "name": "getGatewayHelper()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -112,11 +112,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "getprinterinfo\\(",
-        "message": "getprinterinfo() is not supported in Lucee",
+        "pattern": "getPrinterInfo\\(",
+        "message": "getPrinterInfo() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "getprinterinfo()",
+        "name": "getPrinterInfo()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -126,11 +126,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "getsafehtml\\(",
-        "message": "getsafehtml() is not supported in Lucee",
+        "pattern": "getSafeHtml\\(",
+        "message": "getSafeHtml() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "getsafehtml()",
+        "name": "getSafeHtml()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -140,11 +140,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "imagecreatecaptcha\\(",
-        "message": "imagecreatecaptcha() is not supported in Lucee",
+        "pattern": "imageCreateCaptcha\\(",
+        "message": "imageCreateCaptcha() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "imagecreatecaptcha()",
+        "name": "imageCreateCaptcha()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -154,11 +154,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "imagegetiptcmetadata\\(",
-        "message": "imagegetiptcmetadata() is not supported in Lucee",
+        "pattern": "imageGetIPTCMetadata\\(",
+        "message": "imageGetIPTCMetadata() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "imagegetiptcmetadata()",
+        "name": "imageGetIPTCMetadata()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -168,11 +168,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "imagegetmetadata\\(",
-        "message": "imagegetmetadata() is not supported in Lucee",
+        "pattern": "imageGetMetadata\\(",
+        "message": "imageGetMetadata() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "imagegetmetadata()",
+        "name": "imageGetMetadata()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -182,11 +182,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "imagemakecolortransparent\\(",
-        "message": "imagemakecolortransparent() is not supported in Lucee",
+        "pattern": "imageMakeColorTransparent\\(",
+        "message": "imageMakeColorTransparent() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "imagemakecolortransparent()",
+        "name": "imageMakeColorTransparent()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -196,11 +196,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "imagemaketranslucent\\(",
-        "message": "imagemaketranslucent() is not supported in Lucee",
+        "pattern": "imageMakeTranslucent\\(",
+        "message": "imageMakeTranslucent() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "imagemaketranslucent()",
+        "name": "imageMakeTranslucent()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -210,11 +210,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "invalidateoauthaccesstoken\\(",
-        "message": "invalidateoauthaccesstoken() is not supported in Lucee",
+        "pattern": "invalidateOAuthAccessToken\\(",
+        "message": "invalidateOAuthAccessToken() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "invalidateoauthaccesstoken()",
+        "name": "invalidateOAuthAccessToken()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -224,11 +224,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "isddx\\(",
-        "message": "isddx() is not supported in Lucee",
+        "pattern": "isDDX\\(",
+        "message": "isDDX() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "isddx()",
+        "name": "isDDX()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -238,11 +238,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "isfileobject\\(",
-        "message": "isfileobject() is not supported in Lucee",
+        "pattern": "isFileObject\\(",
+        "message": "isFileObject() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "isfileobject()",
+        "name": "isFileObject()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -252,11 +252,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "ispdffile\\(",
-        "message": "ispdffile() is not supported in Lucee",
+        "pattern": "isPDFFile\\(",
+        "message": "isPDFFile() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "ispdffile()",
+        "name": "isPDFFile()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -266,11 +266,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "issafehtml\\(",
-        "message": "issafehtml() is not supported in Lucee",
+        "pattern": "isSafeHtml\\(",
+        "message": "isSafeHtml() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "issafehtml()",
+        "name": "isSafeHtml()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -280,11 +280,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "isspreadsheetfile\\(",
-        "message": "isspreadsheetfile() is not supported in Lucee",
+        "pattern": "isSpreadsheetFile\\(",
+        "message": "isSpreadsheetFile() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "isspreadsheetfile()",
+        "name": "isSpreadsheetFile()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -294,11 +294,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "isspreadsheetobject\\(",
-        "message": "isspreadsheetobject() is not supported in Lucee",
+        "pattern": "isSpreadsheetObject\\(",
+        "message": "isSpreadsheetObject() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "isspreadsheetobject()",
+        "name": "isSpreadsheetObject()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -308,11 +308,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "isvalidoauthaccesstoken\\(",
-        "message": "isvalidoauthaccesstoken() is not supported in Lucee",
+        "pattern": "isValidOAuthAccessToken\\(",
+        "message": "isValidOAuthAccessToken() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "isvalidoauthaccesstoken()",
+        "name": "isValidOAuthAccessToken()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -322,11 +322,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "ormflushall\\(",
-        "message": "ormflushall() is not supported in Lucee",
+        "pattern": "ormFlushAll\\(",
+        "message": "ormFlushAll() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "ormflushall()",
+        "name": "ormFlushAll()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -336,11 +336,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "ormindex\\(",
-        "message": "ormindex() is not supported in Lucee",
+        "pattern": "ormIndex\\(",
+        "message": "ormIndex() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "ormindex()",
+        "name": "ormIndex()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -350,11 +350,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "ormindexpurge\\(",
-        "message": "ormindexpurge() is not supported in Lucee",
+        "pattern": "ormIndexPurge\\(",
+        "message": "ormIndexPurge() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "ormindexpurge()",
+        "name": "ormIndexPurge()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -364,11 +364,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "ormsearch\\(",
-        "message": "ormsearch() is not supported in Lucee",
+        "pattern": "ormSearch\\(",
+        "message": "ormSearch() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "ormsearch()",
+        "name": "ormSearch()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -378,11 +378,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "ormsearchoffline\\(",
-        "message": "ormsearchoffline() is not supported in Lucee",
+        "pattern": "ormSearchOffline\\(",
+        "message": "ormSearchOffline() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "ormsearchoffline()",
+        "name": "ormSearchOffline()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -434,11 +434,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "reescape\\(",
-        "message": "reescape() is not supported in Lucee",
+        "pattern": "reEscape\\(",
+        "message": "reEscape() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "reescape()",
+        "name": "reEscape()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -448,11 +448,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "removecachedquery\\(",
-        "message": "removecachedquery() is not supported in Lucee",
+        "pattern": "removeCachedQuery\\(",
+        "message": "removeCachedQuery() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "removecachedquery()",
+        "name": "removeCachedQuery()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -462,11 +462,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "serializexml\\(",
-        "message": "serializexml() is not supported in Lucee",
+        "pattern": "serializeXml\\(",
+        "message": "serializeXml() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "serializexml()",
+        "name": "serializeXml()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -476,11 +476,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "sessiongetmetadata\\(",
-        "message": "sessiongetmetadata() is not supported in Lucee",
+        "pattern": "sessionGetMetadata\\(",
+        "message": "sessionGetMetadata() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "sessiongetmetadata()",
+        "name": "sessionGetMetadata()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -490,11 +490,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetaddautofilter\\(",
-        "message": "spreadsheetaddautofilter() is not supported in Lucee",
+        "pattern": "spreadsheetAddAutofilter\\(",
+        "message": "spreadsheetAddAutofilter() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetaddautofilter()",
+        "name": "spreadsheetAddAutofilter()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -504,11 +504,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetaddcolumn\\(",
-        "message": "spreadsheetaddcolumn() is not supported in Lucee",
+        "pattern": "spreadsheetAddColumn\\(",
+        "message": "spreadsheetAddColumn() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetaddcolumn()",
+        "name": "spreadsheetAddColumn()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -518,11 +518,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetaddfreezepane\\(",
-        "message": "spreadsheetaddfreezepane() is not supported in Lucee",
+        "pattern": "spreadsheetAddFreezePane\\(",
+        "message": "spreadsheetAddFreezePane() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetaddfreezepane()",
+        "name": "spreadsheetAddFreezePane()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -532,11 +532,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetaddimage\\(",
-        "message": "spreadsheetaddimage() is not supported in Lucee",
+        "pattern": "spreadsheetAddImage\\(",
+        "message": "spreadsheetAddImage() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetaddimage()",
+        "name": "spreadsheetAddImage()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -546,11 +546,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetaddinfo\\(",
-        "message": "spreadsheetaddinfo() is not supported in Lucee",
+        "pattern": "spreadsheetAddInfo\\(",
+        "message": "spreadsheetAddInfo() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetaddinfo()",
+        "name": "spreadsheetAddInfo()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -560,11 +560,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetaddpagebreaks\\(",
-        "message": "spreadsheetaddpagebreaks() is not supported in Lucee",
+        "pattern": "spreadsheetAddPageBreaks\\(",
+        "message": "spreadsheetAddPageBreaks() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetaddpagebreaks()",
+        "name": "spreadsheetAddPageBreaks()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -574,11 +574,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetaddrow\\(",
-        "message": "spreadsheetaddrow() is not supported in Lucee",
+        "pattern": "spreadsheetAddRow\\(",
+        "message": "spreadsheetAddRow() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetaddrow()",
+        "name": "spreadsheetAddRow()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -588,11 +588,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetaddrows\\(",
-        "message": "spreadsheetaddrows() is not supported in Lucee",
+        "pattern": "spreadsheetAddRows\\(",
+        "message": "spreadsheetAddRows() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetaddrows()",
+        "name": "spreadsheetAddRows()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -602,11 +602,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetaddsplitpane\\(",
-        "message": "spreadsheetaddsplitpane() is not supported in Lucee",
+        "pattern": "spreadsheetAddSplitPane\\(",
+        "message": "spreadsheetAddSplitPane() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetaddsplitpane()",
+        "name": "spreadsheetAddSplitPane()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -616,11 +616,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetcreatesheet\\(",
-        "message": "spreadsheetcreatesheet() is not supported in Lucee",
+        "pattern": "spreadsheetCreateSheet\\(",
+        "message": "spreadsheetCreateSheet() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetcreatesheet()",
+        "name": "spreadsheetCreateSheet()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -630,11 +630,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetdeletecolumn\\(",
-        "message": "spreadsheetdeletecolumn() is not supported in Lucee",
+        "pattern": "spreadsheetDeleteColumn\\(",
+        "message": "spreadsheetDeleteColumn() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetdeletecolumn()",
+        "name": "spreadsheetDeleteColumn()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -644,11 +644,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetdeletecolumns\\(",
-        "message": "spreadsheetdeletecolumns() is not supported in Lucee",
+        "pattern": "spreadsheetDeleteColumns\\(",
+        "message": "spreadsheetDeleteColumns() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetdeletecolumns()",
+        "name": "spreadsheetDeleteColumns()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -658,11 +658,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetdeleterow\\(",
-        "message": "spreadsheetdeleterow() is not supported in Lucee",
+        "pattern": "spreadsheetDeleteRow\\(",
+        "message": "spreadsheetDeleteRow() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetdeleterow()",
+        "name": "spreadsheetDeleteRow()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -672,11 +672,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetdeleterows\\(",
-        "message": "spreadsheetdeleterows() is not supported in Lucee",
+        "pattern": "spreadsheetDeleteRows\\(",
+        "message": "spreadsheetDeleteRows() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetdeleterows()",
+        "name": "spreadsheetDeleteRows()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -686,11 +686,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetformatcell\\(",
-        "message": "spreadsheetformatcell() is not supported in Lucee",
+        "pattern": "spreadsheetFormatCell\\(",
+        "message": "spreadsheetFormatCell() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetformatcell()",
+        "name": "spreadsheetFormatCell()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -700,11 +700,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetformatcellrange\\(",
-        "message": "spreadsheetformatcellrange() is not supported in Lucee",
+        "pattern": "spreadsheetFormatCellRange\\(",
+        "message": "spreadsheetFormatCellRange() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetformatcellrange()",
+        "name": "spreadsheetFormatCellRange()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -714,11 +714,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetformatcolumn\\(",
-        "message": "spreadsheetformatcolumn() is not supported in Lucee",
+        "pattern": "spreadsheetFormatColumn\\(",
+        "message": "spreadsheetFormatColumn() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetformatcolumn()",
+        "name": "spreadsheetFormatColumn()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -728,11 +728,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetformatcolumns\\(",
-        "message": "spreadsheetformatcolumns() is not supported in Lucee",
+        "pattern": "spreadsheetFormatColumns\\(",
+        "message": "spreadsheetFormatColumns() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetformatcolumns()",
+        "name": "spreadsheetFormatColumns()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -742,11 +742,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetformatrow\\(",
-        "message": "spreadsheetformatrow() is not supported in Lucee",
+        "pattern": "spreadsheetFormatRow\\(",
+        "message": "spreadsheetFormatRow() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetformatrow()",
+        "name": "spreadsheetFormatRow()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -756,11 +756,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetformatrows\\(",
-        "message": "spreadsheetformatrows() is not supported in Lucee",
+        "pattern": "spreadsheetFormatRows\\(",
+        "message": "spreadsheetFormatRows() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetformatrows()",
+        "name": "spreadsheetFormatRows()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -770,11 +770,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetgetcellcomment\\(",
-        "message": "spreadsheetgetcellcomment() is not supported in Lucee",
+        "pattern": "spreadsheetGetCellComment\\(",
+        "message": "spreadsheetGetCellComment() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetgetcellcomment()",
+        "name": "spreadsheetGetCellComment()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -784,11 +784,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetgetcellformula\\(",
-        "message": "spreadsheetgetcellformula() is not supported in Lucee",
+        "pattern": "spreadsheetGetCellFormula\\(",
+        "message": "spreadsheetGetCellFormula() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetgetcellformula()",
+        "name": "spreadsheetGetCellFormula()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -798,11 +798,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetgetcellvalue\\(",
-        "message": "spreadsheetgetcellvalue() is not supported in Lucee",
+        "pattern": "spreadsheetGetCellValue\\(",
+        "message": "spreadsheetGetCellValue() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetgetcellvalue()",
+        "name": "spreadsheetGetCellValue()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -812,11 +812,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetinfo\\(",
-        "message": "spreadsheetinfo() is not supported in Lucee",
+        "pattern": "spreadsheetInfo\\(",
+        "message": "spreadsheetInfo() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetinfo()",
+        "name": "spreadsheetInfo()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -826,11 +826,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetmergecells\\(",
-        "message": "spreadsheetmergecells() is not supported in Lucee",
+        "pattern": "spreadsheetMergeCells\\(",
+        "message": "spreadsheetMergeCells() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetmergecells()",
+        "name": "spreadsheetMergeCells()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -840,11 +840,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetnew\\(",
-        "message": "spreadsheetnew() is not supported in Lucee",
+        "pattern": "spreadsheetNew\\(",
+        "message": "spreadsheetNew() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetnew()",
+        "name": "spreadsheetNew()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -854,11 +854,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetread\\(",
-        "message": "spreadsheetread() is not supported in Lucee",
+        "pattern": "spreadsheetRead\\(",
+        "message": "spreadsheetRead() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetread()",
+        "name": "spreadsheetRead()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -868,11 +868,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetreadbinary\\(",
-        "message": "spreadsheetreadbinary() is not supported in Lucee",
+        "pattern": "spreadsheetReadBinary\\(",
+        "message": "spreadsheetReadBinary() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetreadbinary()",
+        "name": "spreadsheetReadBinary()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -882,11 +882,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetremovesheet\\(",
-        "message": "spreadsheetremovesheet() is not supported in Lucee",
+        "pattern": "spreadsheetRemoveSheet\\(",
+        "message": "spreadsheetRemoveSheet() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetremovesheet()",
+        "name": "spreadsheetRemoveSheet()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -896,11 +896,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetsetactivesheet\\(",
-        "message": "spreadsheetsetactivesheet() is not supported in Lucee",
+        "pattern": "spreadsheetSetActiveSheet\\(",
+        "message": "spreadsheetSetActiveSheet() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetsetactivesheet()",
+        "name": "spreadsheetSetActiveSheet()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -910,11 +910,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetsetactivesheetnumber\\(",
-        "message": "spreadsheetsetactivesheetnumber() is not supported in Lucee",
+        "pattern": "spreadsheetSetActiveSheetNumber\\(",
+        "message": "spreadsheetSetActiveSheetNumber() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetsetactivesheetnumber()",
+        "name": "spreadsheetSetActiveSheetNumber()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -924,11 +924,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetsetcellcomment\\(",
-        "message": "spreadsheetsetcellcomment() is not supported in Lucee",
+        "pattern": "spreadsheetSetCellComment\\(",
+        "message": "spreadsheetSetCellComment() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetsetcellcomment()",
+        "name": "spreadsheetSetCellComment()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -938,11 +938,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetsetcellformula\\(",
-        "message": "spreadsheetsetcellformula() is not supported in Lucee",
+        "pattern": "spreadsheetSetCellFormula\\(",
+        "message": "spreadsheetSetCellFormula() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetsetcellformula()",
+        "name": "spreadsheetSetCellFormula()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -952,11 +952,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetsetcellvalue\\(",
-        "message": "spreadsheetsetcellvalue() is not supported in Lucee",
+        "pattern": "spreadsheetSetCellValue\\(",
+        "message": "spreadsheetSetCellValue() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetsetcellvalue()",
+        "name": "spreadsheetSetCellValue()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -966,11 +966,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetsetcolumnwidth\\(",
-        "message": "spreadsheetsetcolumnwidth() is not supported in Lucee",
+        "pattern": "spreadsheetSetColumnWidth\\(",
+        "message": "spreadsheetSetColumnWidth() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetsetcolumnwidth()",
+        "name": "spreadsheetSetColumnWidth()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -980,11 +980,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetsetfooter\\(",
-        "message": "spreadsheetsetfooter() is not supported in Lucee",
+        "pattern": "spreadsheetSetFooter\\(",
+        "message": "spreadsheetSetFooter() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetsetfooter()",
+        "name": "spreadsheetSetFooter()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -994,11 +994,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetsetheader\\(",
-        "message": "spreadsheetsetheader() is not supported in Lucee",
+        "pattern": "spreadsheetSetHeader\\(",
+        "message": "spreadsheetSetHeader() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetsetheader()",
+        "name": "spreadsheetSetHeader()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -1008,11 +1008,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetsetrowheight\\(",
-        "message": "spreadsheetsetrowheight() is not supported in Lucee",
+        "pattern": "spreadsheetSetRowHeight\\(",
+        "message": "spreadsheetSetRowHeight() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetsetrowheight()",
+        "name": "spreadsheetSetRowHeight()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -1022,11 +1022,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetshiftcolumns\\(",
-        "message": "spreadsheetshiftcolumns() is not supported in Lucee",
+        "pattern": "spreadsheetShiftColumns\\(",
+        "message": "spreadsheetShiftColumns() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetshiftcolumns()",
+        "name": "spreadsheetShiftColumns()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -1036,11 +1036,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetshiftrows\\(",
-        "message": "spreadsheetshiftrows() is not supported in Lucee",
+        "pattern": "spreadsheetShiftRows\\(",
+        "message": "spreadsheetShiftRows() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetshiftrows()",
+        "name": "spreadsheetShiftRows()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -1050,11 +1050,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "spreadsheetwrite\\(",
-        "message": "spreadsheetwrite() is not supported in Lucee",
+        "pattern": "spreadsheetWrite\\(",
+        "message": "spreadsheetWrite() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "spreadsheetwrite()",
+        "name": "spreadsheetWrite()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -1064,11 +1064,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "storegetmetadata\\(",
-        "message": "storegetmetadata() is not supported in Lucee",
+        "pattern": "storeGetMetadata\\(",
+        "message": "storeGetMetadata() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "storegetmetadata()",
+        "name": "storeGetMetadata()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -1078,11 +1078,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "storesetmetadata\\(",
-        "message": "storesetmetadata() is not supported in Lucee",
+        "pattern": "storeSetMetadata\\(",
+        "message": "storeSetMetadata() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "storesetmetadata()",
+        "name": "storeSetMetadata()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -1092,11 +1092,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "writebody\\(",
-        "message": "writebody() is not supported in Lucee",
+        "pattern": "writeBody\\(",
+        "message": "writeBody() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "writebody()",
+        "name": "writeBody()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -1106,11 +1106,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "wsgetallchannels\\(",
-        "message": "wsgetallchannels() is not supported in Lucee",
+        "pattern": "WSGetAllChannels\\(",
+        "message": "WSGetAllChannels() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "wsgetallchannels()",
+        "name": "WSGetAllChannels()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -1120,11 +1120,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "wsgetsubscribers\\(",
-        "message": "wsgetsubscribers() is not supported in Lucee",
+        "pattern": "WSGetSubscribers\\(",
+        "message": "WSGetSubscribers() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "wsgetsubscribers()",
+        "name": "WSGetSubscribers()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -1134,11 +1134,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "wspublish\\(",
-        "message": "wspublish() is not supported in Lucee",
+        "pattern": "WSPublish\\(",
+        "message": "WSPublish() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "wspublish()",
+        "name": "WSPublish()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
@@ -1148,11 +1148,11 @@
         "functionname": "checkcode"
     },
     {
-        "pattern": "wssendmessage\\(",
-        "message": "wssendmessage() is not supported in Lucee",
+        "pattern": "WSSendMessage\\(",
+        "message": "WSSendMessage() is not supported in Lucee",
         "componentname": "CodeChecker",
         "category": "LuceeMissingFunctions",
-        "name": "wssendmessage()",
+        "name": "WSSendMessage()",
         "passonmonmatch": false,
         "extensions": "cfm,cfc",
         "severity": "5",
