@@ -376,7 +376,11 @@ component singleton {
 				} else if( IsSimpleValue( value ) AND !Len( value ) ){ //NB don't use member function: won't work if numeric
 					cell.setCellType( cell.CELL_TYPE_BLANK );
 				} else {
-					cell.setCellValue( JavaCast( "string",value ) );
+					if( len( value ) > 32000 ){
+						cell.setCellValue( JavaCast( "string", left( value, 32000 ) ) );	
+					} else {
+						cell.setCellValue( JavaCast( "string",value ) );
+					}
 				}
 				/* Replace the existing styles with custom formatting  */
 				if( queryColumn.KeyExists( "customCellStyle" ) ){
