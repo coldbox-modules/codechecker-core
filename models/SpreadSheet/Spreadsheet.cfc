@@ -376,7 +376,8 @@ component singleton {
 				} else if( IsSimpleValue( value ) AND !Len( value ) ){ //NB don't use member function: won't work if numeric
 					cell.setCellType( cell.CELL_TYPE_BLANK );
 				} else {
-					cell.setCellValue( JavaCast( "string",value ) );
+					// A cell has a max length of 32,767 characters, so make the value slightly smaller
+					cell.setCellValue( JavaCast( "string", left( value, 32766 ) ) );
 				}
 				/* Replace the existing styles with custom formatting  */
 				if( queryColumn.KeyExists( "customCellStyle" ) ){
